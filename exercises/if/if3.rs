@@ -2,17 +2,18 @@
 //
 // Execute `rustlings hint if3` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
-
+// &'static: tickと発音する生存期間パラメータ
+// animal_habitatの返り値identifierの生存期間がstaticであることを明記
 pub fn animal_habitat(animal: &str) -> &'static str {
+    // 同じ型で分岐する必要あり
     let identifier = if animal == "crab" {
         1
     } else if animal == "gopher" {
-        2.0
+        2
     } else if animal == "snake" {
         3
     } else {
-        "Unknown"
+        0
     };
 
     // DO NOT CHANGE THIS STATEMENT BELOW
