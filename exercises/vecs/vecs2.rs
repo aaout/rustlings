@@ -7,25 +7,28 @@
 //
 // Execute `rustlings hint vecs2` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
-
 fn vec_loop(mut v: Vec<i32>) -> Vec<i32> {
     for element in v.iter_mut() {
         // TODO: Fill this up so that each element in the Vec `v` is
         // multiplied by 2.
-        ???
+        // '*='はi32に対してのみ使用可能
+        // 配列の要素&mut i32を上書きする際は*elementとして参照値を取得して代入
+        *element *= 2;
     }
 
     // At this point, `v` should be equal to [4, 8, 12, 16, 20].
     v
 }
 
+// TODO: グロージャ式の理解
 fn vec_map(v: &Vec<i32>) -> Vec<i32> {
-    v.iter().map(|element| {
-        // TODO: Do the same thing as above - but instead of mutating the
-        // Vec, you can just return the new number!
-        ???
-    }).collect()
+    v.iter()
+        .map(|element| {
+            // TODO: Do the same thing as above - but instead of mutating the
+            // Vec, you can just return the new number!
+            element * 2
+        })
+        .collect()
 }
 
 #[cfg(test)]
