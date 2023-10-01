@@ -7,8 +7,6 @@
 // Execute `rustlings hint structs3` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
 #[derive(Debug)]
 struct Package {
     sender_country: String,
@@ -16,6 +14,9 @@ struct Package {
     weight_in_grams: u32,
 }
 
+// struct上で動作する関数を定義する際は'impl'
+// structで定義した変数にアクセスする際はself.xxx
+// pythonのclassでインスタンス変数とメソッドを定義する感じ
 impl Package {
     fn new(sender_country: String, recipient_country: String, weight_in_grams: u32) -> Package {
         if weight_in_grams < 10 {
@@ -31,12 +32,16 @@ impl Package {
         }
     }
 
-    fn is_international(&self) -> ??? {
-        // Something goes here...
+    fn is_international(&self) -> bool {
+        if self.sender_country != self.recipient_country {
+            true
+        } else {
+            false
+        }
     }
 
-    fn get_fees(&self, cents_per_gram: u32) -> ??? {
-        // Something goes here...
+    fn get_fees(&self, cents_per_gram: u32) -> u32 {
+        cents_per_gram * self.weight_in_grams
     }
 }
 
