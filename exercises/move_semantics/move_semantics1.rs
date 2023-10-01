@@ -3,8 +3,6 @@
 // Execute `rustlings hint move_semantics1` or use the `hint` watch subcommand
 // for a hint.
 
-// I AM NOT DONE
-
 #[test]
 fn main() {
     let vec0 = vec![22, 44, 66];
@@ -14,8 +12,9 @@ fn main() {
     assert_eq!(vec1, vec![22, 44, 66, 88]);
 }
 
+// Vec<T>は動的にメモリを確保するため、要素の追加や結合が可能
 fn fill_vec(vec: Vec<i32>) -> Vec<i32> {
-    let vec = vec;
+    let mut vec = vec;
 
     vec.push(88);
 

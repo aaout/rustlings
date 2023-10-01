@@ -20,7 +20,7 @@ fn vec_loop(mut v: Vec<i32>) -> Vec<i32> {
     v
 }
 
-// TODO: グロージャ式の理解
+// HACK: グロージャ式の理解
 fn vec_map(v: &Vec<i32>) -> Vec<i32> {
     v.iter()
         .map(|element| {
