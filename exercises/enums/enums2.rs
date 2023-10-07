@@ -3,11 +3,13 @@
 // Execute `rustlings hint enums2` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
+// 列挙型定義時に型を定義. 構造体と似てる.
 #[derive(Debug)]
 enum Message {
-    // TODO: define the different variants used below
+    Quit,
+    Echo(String),
+    Move { x: u32, y: u32 },
+    ChangeColor(u32, u32, u32),
 }
 
 impl Message {
